@@ -4,9 +4,6 @@ BASE_URL = "https://tap-vt26-testautomatisering.github.io/exam/"
 
 
 class BasePage:
-    """Det som är gemensamt för alla vyer: sidhuvudet med navigeringen."""
-
-    # Namnet på vyn och test-id för dess knapp i navigeringen
     NAV_TEST_IDS = {
         "Katalog": "catalog",
         "Lägg till bok": "add-book",
@@ -28,5 +25,4 @@ class BasePage:
         self.nav_button(view).click()
 
     def content(self):
-        """Ett element som bara finns i den här vyn. Implementeras av varje vy."""
         raise NotImplementedError

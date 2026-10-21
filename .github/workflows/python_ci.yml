@@ -10,34 +10,28 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      # 1. Hämta koden
       - name: Checka ut koden från repot
         uses: actions/checkout@v7
 
-      # 2. Installera Python
       - name: Inställningar för Python
         uses: actions/setup-python@v7
         with:
           python-version: '3.13'
 
-      # 3. Installera beroenden och webbläsaren för Playwright
       - name: Installera beroenden
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
-      # 4. Linting
       - name: Linta koden med flake8
         run: flake8 src tests conftest.py
 
-      # 5. Enhetstester och integrationstester
       - name: Kör enhetstester
         run: pytest -m unit -v
 
       - name: Kör integrationstester
         run: pytest -m integration -v
 
-      # 6. E2E-tester med behave och Playwright (headless är standard i environment.py)
       - name: Kör E2E-tester med behave
         run: behave --format progress

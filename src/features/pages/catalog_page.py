@@ -4,14 +4,10 @@ from src.features.pages.base_page import BasePage
 
 
 class CatalogPage(BasePage):
-    """Vyn "Katalog": alla böcker, med ett hjärta för att välja favoriter."""
-
     def __init__(self, page):
         super().__init__(page)
         self.intro = page.get_by_text("Sidan för dig som gillar att läsa")
-        # Varje bok har ett hjärta med test-id "star-<titel>"
         self.stars = page.get_by_test_id(re.compile(r"^star-"))
-        # Ett markerat hjärta syns bara på CSS-klassen "selected" - det finns inget test-id för det
         self.selected_stars = self.stars.and_(page.locator(".selected"))
 
     def content(self):
@@ -28,5 +24,4 @@ class CatalogPage(BasePage):
             self.stars.nth(i).click()
 
     def book_entry(self, title, author):
-        # Varje bok visas som: "Titel", Författare
         return self.page.get_by_text(f'"{title}", {author}')

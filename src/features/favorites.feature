@@ -1,9 +1,5 @@
 #noinspection CucumberUndefinedStep
 Feature: Mina böcker
-  # US5:
-  # Som läsare
-  # vill jag se en lista med de böcker jag har hjärtmarkerat
-  # så att jag vet vad jag vill läsa.
 
   Background:
     Given att jag är på Läslistans startsida

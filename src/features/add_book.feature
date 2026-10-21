@@ -1,9 +1,5 @@
 #noinspection CucumberUndefinedStep
 Feature: Lägga till en ny bok
-  # US4:
-  # Som läsare
-  # vill jag kunna lägga till en bok med titel och författare
-  # så att katalogen innehåller böcker som jag tycker saknas.
 
   Background:
     Given att jag är på Läslistans startsida

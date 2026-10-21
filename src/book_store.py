@@ -4,11 +4,6 @@ from src.initial_books import INITIAL_BOOKS
 
 
 class BookStore:
-    """Katalogen med alla böcker i Läslistan.
-
-    BookStore är beroende av FavoriteBooks. Beroendet skickas in i konstruktorn,
-    så att det kan bytas ut mot en mock i enhetstesterna."""
-
     def __init__(self, favorites=None, books=None):
         if books is None:
             books = [Book(book_id, title, author) for book_id, title, author in INITIAL_BOOKS]
@@ -16,8 +11,6 @@ class BookStore:
         self.favorites = favorites if favorites is not None else FavoriteBooks()
 
     def addBook(self, author, title):
-        """Lägg till en ny bok i katalogen och returnera den.
-        Både författare och titel måste vara ifyllda, precis som på webbsidan."""
         if not author or not title:
             raise ValueError("Både författare och titel måste anges")
 
@@ -26,8 +19,6 @@ class BookStore:
         return book
 
     def toggleFavorite(self, book_id):
-        """Växla favoritmarkeringen för en bok.
-        Returnerar True om boken nu är favorit, annars False."""
         book = self.get_book(book_id)
         book.fav = not book.fav
 
@@ -47,5 +38,4 @@ class BookStore:
         return len(self.books)
 
     def _make_id(self):
-        # Samma regel som webbsidan: högsta befintliga id + 1
         return max((b.id for b in self.books), default=0) + 1

@@ -22,11 +22,9 @@ def favorites():
 
 @pytest.fixture
 def mock_favorites(mocker):
-    # "mocker" är en fixture som kommer från pytest-mock
     return mocker.Mock(spec=FavoriteBooks)
 
 
 @pytest.fixture
 def store_with_mock(mock_favorites):
-    """BookStore med startdata, där FavoriteBooks är utbytt mot en mock."""
     return BookStore(favorites=mock_favorites)

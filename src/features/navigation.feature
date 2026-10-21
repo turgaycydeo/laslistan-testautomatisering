@@ -1,9 +1,5 @@
 #noinspection CucumberUndefinedStep
 Feature: Navigering mellan vyerna
-  # US1:
-  # Som besökare
-  # vill jag kunna växla mellan vyerna Katalog, Lägg till bok, Mina böcker och Statistik
-  # så att jag hittar det jag vill göra.
 
   Background:
     Given att jag är på Läslistans startsida

@@ -1,6 +1,3 @@
-
-# Samma startdata som webbsidan använder (exam/src/data/initial.js).
-# Observera att id-numren inte är i följd.
 INITIAL_BOOKS = [
     (100, "Ormar på ett plan: En Python-berättelse", "Guido van Rossum"),
     (102, "The Pragmatic Procrastinator", "Dave Thomasson"),

@@ -1,9 +1,5 @@
 #noinspection CucumberUndefinedStep
 Feature: Statistik
-  # US6:
-  # Som besökare
-  # vill jag se hur många böcker listan har och hur många som är hjärtmarkerade
-  # så att jag får en överblick över läslistan.
 
   Background:
     Given att jag är på Läslistans startsida

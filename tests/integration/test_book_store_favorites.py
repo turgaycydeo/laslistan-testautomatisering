@@ -3,9 +3,6 @@ import pytest
 from src.book_store import BookStore
 
 
-# Integrationstest: testar att BookStore och FavoriteBooks fungerar tillsammans.
-# Mocka inte, använd riktiga klasser i stället. Fixturen "favorites" finns i conftest.py.
-
 @pytest.fixture
 def store(favorites):
     return BookStore(favorites=favorites)

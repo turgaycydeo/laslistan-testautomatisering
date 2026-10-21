@@ -1,14 +1,5 @@
 #noinspection CucumberUndefinedStep
 Feature: Katalog och favoritmarkering
-  # US2:
-  # Som läsare
-  # vill jag se alla böcker i katalogen med titel och författare
-  # så att jag kan hitta något att läsa.
-  #
-  # US3:
-  # Som läsare
-  # vill jag kunna hjärtmarkera böcker i katalogen, och ta bort markeringen igen,
-  # så att jag kan välja ut mina favoriter.
 
   Background:
     Given att jag är på Läslistans startsida

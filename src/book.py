@@ -1,7 +1,4 @@
-
 class Book:
-    """En bok i Läslistans katalog."""
-
     def __init__(self, book_id, title, author, fav=False):
         self.id = book_id
         self.title = title

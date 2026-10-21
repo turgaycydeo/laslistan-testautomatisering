@@ -2,8 +2,6 @@ from src.features.pages.base_page import BasePage
 
 
 class AddBookPage(BasePage):
-    """Vyn "Lägg till bok": formulär med titel och författare."""
-
     def __init__(self, page):
         super().__init__(page)
         self.title_input = page.get_by_test_id("add-input-title")

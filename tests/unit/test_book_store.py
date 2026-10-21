@@ -4,10 +4,6 @@ from src.book import Book
 from src.book_store import BookStore
 
 
-# Enhetstest: BookStore testas separat. FavoriteBooks är utbytt mot en mock.
-
-# ---------- addBook ----------
-
 @pytest.mark.unit
 def test_add_book__increases_count(store_with_mock):
     before = store_with_mock.count()
@@ -35,7 +31,6 @@ def test_add_book__is_not_favorite(store_with_mock):
 
 @pytest.mark.unit
 def test_add_book__id_is_highest_id_plus_one(store_with_mock):
-    # Startdatans högsta id är 115, trots att det bara finns 13 böcker
     book = store_with_mock.addBook("Robert C. Martin", "Clean Code")
 
     assert book.id == 116
@@ -81,8 +76,6 @@ def test_add_book__does_not_use_favorites(store_with_mock, mock_favorites):
     assert not mock_favorites.add.called
     assert not mock_favorites.remove.called
 
-
-# ---------- toggleFavorite ----------
 
 @pytest.mark.unit
 def test_toggle_favorite__marks_book(store_with_mock):

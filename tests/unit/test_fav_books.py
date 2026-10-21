@@ -3,10 +3,6 @@ import pytest
 from src.book import Book
 
 
-# Enhetstest: FavoriteBooks har inga beroenden, så ingen mock behövs.
-
-# ---------- add ----------
-
 @pytest.mark.unit
 def test_new_favorites__is_empty(favorites):
     assert favorites.count() == 0
@@ -46,8 +42,6 @@ def test_add__book_with_same_id_is_not_duplicated(favorites, book):
 
     assert favorites.count() == 1
 
-
-# ---------- remove ----------
 
 @pytest.mark.unit
 def test_remove__book_is_removed(favorites, book):

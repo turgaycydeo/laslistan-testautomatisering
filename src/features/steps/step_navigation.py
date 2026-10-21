@@ -8,7 +8,6 @@ def step_start_page(context):
     context.current_view = "Katalog"
 
 
-# @step fungerar både som Given, When och Then
 @step(u'jag går till vyn "{view}"')
 def step_go_to_view(context, view):
     context.header.go_to(view)
@@ -22,7 +21,6 @@ def step_heading_visible(context):
 
 @then(u'ska vyn "{view}" vara vald')
 def step_view_selected(context, view):
-    # Knappen för vyn man står i är inaktiverad
     expect(context.header.nav_button(view)).to_be_disabled()
 
 

@@ -6,7 +6,6 @@ from playwright.sync_api import expect
 
 @then(u'ska statistiken visa att listan har {count:d} böcker')
 def step_book_count(context, count):
-    # \b så att t.ex. 13 inte matchar 113
     expect(context.stats.book_count).to_have_text(re.compile(rf"Listan har {count}\b böcker"))
 
 
