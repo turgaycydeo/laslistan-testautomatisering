@@ -1,0 +1,16 @@
+.venv
+.idea
+.vscode
+__pycache__
+
+# Filer som pytest kan skapa automatiskt
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Kursmaterialet ska inte laddas upp till GitHub
+*.pdf
+
+# Filer som kan skapas automatiskt av operativsystemet
+.DS_Store
+Thumbs.db
