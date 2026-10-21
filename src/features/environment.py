@@ -1,6 +1,7 @@
 from playwright.sync_api import sync_playwright
 
 from src.features.pages.add_book_page import AddBookPage
+from src.features.pages.base_page import BasePage
 from src.features.pages.catalog_page import CatalogPage
 from src.features.pages.favorites_page import FavoritesPage
 from src.features.pages.stats_page import StatsPage
@@ -22,6 +23,9 @@ def before_scenario(context, scenario):
     # Appen sparar ingenting - varje scenario börjar med samma 13 böcker.
     context.page = context.browser.new_page()
     context.page.set_default_timeout(3_000)
+
+    # Sidhuvudet med rubriken och navigeringen, som finns i alla vyer
+    context.header = BasePage(context.page)
 
     # Page Object för varje vy
     context.catalog = CatalogPage(context.page)

@@ -11,6 +11,8 @@ class CatalogPage(BasePage):
         self.intro = page.get_by_text("Sidan för dig som gillar att läsa")
         # Varje bok har ett hjärta med test-id "star-<titel>"
         self.stars = page.get_by_test_id(re.compile(r"^star-"))
+        # Ett markerat hjärta syns bara på CSS-klassen "selected" - det finns inget test-id för det
+        self.selected_stars = self.stars.and_(page.locator(".selected"))
 
     def content(self):
         return self.intro

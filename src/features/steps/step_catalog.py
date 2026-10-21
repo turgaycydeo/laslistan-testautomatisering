@@ -29,7 +29,7 @@ def step_catalog_count(context, count):
 
 @then(u'ska inga böcker vara hjärtmarkerade')
 def step_no_books_marked(context):
-    expect(context.page.locator(".star.selected")).to_have_count(0)
+    expect(context.catalog.selected_stars).to_have_count(0)
 
 
 @then(u'ska hjärtat för "{title}" vara {state}')
